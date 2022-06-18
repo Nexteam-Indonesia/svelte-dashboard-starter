@@ -1,8 +1,8 @@
 <script>
-    import InputFile from "../components/global/input/InputFile.svelte";
+    import InputTextIcon from "../components/global/input/InputTextIcon.svelte";
 
 </script>
 
 <div class="max-w-sm flex flex-row items-center p-8" >
-    <InputFile error="This is error" />
+    <InputTextIcon />
 </div>
