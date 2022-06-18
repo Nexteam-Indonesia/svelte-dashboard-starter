@@ -1,8 +1,8 @@
 <script>
-    import InputTextArea from "../components/global/input/InputTextArea.svelte";
+    import InputCheckBox from "../components/global/input/InputCheckBox.svelte";
 
 </script>
 
 <div class="max-w-sm flex flex-row items-center p-8" >
-    <InputTextArea label="The Label" placeholder="Palace" error="Error" />
+    <InputCheckBox label="Remember me" id="my-id" error="Error" />
 </div>
