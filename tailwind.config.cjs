@@ -1,9 +1,11 @@
 module.exports = {
     purge: ['./src/**/*.svelte', './src/**/*.css'],
-    darkMode: false,
+    darkMode: 'class',
     theme: {},
     variants: {
         extend: {},
     },
-    plugins: [],
+    plugins: [
+        require('flowbite/plugin')
+    ],
 }
