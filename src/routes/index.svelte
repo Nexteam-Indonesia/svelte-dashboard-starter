@@ -2,6 +2,8 @@
     import BackofficeLayout from "../layout/BackofficeLayout.svelte";
     import WrapperContent from "../components/global/wrapper/WrapperContent.svelte";
     import PrimaryButton from "../components/global/button/PrimaryButton.svelte";
+    import TableBase from "../components/global/table/TableBase.svelte";
+    import PaginationBase from "../components/global/pagination/PaginationBase.svelte";
 </script>
 
 <BackofficeLayout>
@@ -12,12 +14,8 @@
             </PrimaryButton>
         </div>
         <div class="flex flex-col" slot="children">
-            <div class="h-20 w-20 bg-blue-400 mb-8" />
-            <div class="h-20 w-20 bg-blue-400 mb-8" />
-            <div class="h-20 w-20 bg-blue-400 mb-8" />
-            <div class="h-20 w-20 bg-blue-400 mb-8" />
-            <div class="h-20 w-20 bg-blue-400 mb-8" />
-            <div class="h-20 w-20 bg-blue-400 mb-8" />
+            <TableBase />
+            <PaginationBase />
         </div>
     </WrapperContent>
 </BackofficeLayout>
