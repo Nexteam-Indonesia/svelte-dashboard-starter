@@ -2,7 +2,7 @@
 </script>
 
 <aside
-    class="flex flex-col overflow-y-auto flex-wrap bg-white border-r border-gray-200 p-6 flex-none w-64 md:translate-x-0 top-0  h-full shadow-xl md:shadow-none transform transition ease-in-out duration-500 sm:duration-700 overflow-auto -translate-x-64"
+    class="flex flex-col z-10 overflow-y-hidden flex-wrap bg-white border-r border-gray-200 p-6 flex-none w-64 md:translate-x-0 top-0  h-full shadow-xl md:shadow-none transform transition ease-in-out duration-500 sm:duration-700 overflow-auto -translate-x-64"
 >
     <div class="flex flex-col">
         <div class="text-right md:hidden block mb-4">
@@ -12,11 +12,11 @@
         </div>
         <div class="flex flex-col mb-6">
             <h1 class="capitalize mb-2">HOME</h1>
-            <ul class="space-y-1">
+            <ul class="space-y-2">
                 <li>
                     <a
                         href="/"
-                        class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                        class="flex items-center py-2 px-3 text-base font-normal text-white rounded-lg dark:text-white bg-blue-500 dark:hover:bg-gray-700"
                     >
                         <i class="bx bx-home-alt mr-2" />
                         <span class="ml-1">Dashboard</span>
@@ -25,7 +25,7 @@
                 <li>
                     <a
                         href="/"
-                        class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                        class="flex items-center py-2 px-3  text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                     >
                         <i class="bx bx-cart-alt mr-2" />
                         <span class="ml-1">Order</span>
@@ -34,7 +34,7 @@
                 <li>
                     <a
                         href="/"
-                        class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                        class="flex items-center py-2 px-3  text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                     >
                         <i class="bx bx-wallet-alt mr-2" />
                         <span class="ml-1">Payment</span>
@@ -44,11 +44,11 @@
         </div>
         <div class="flex flex-col mb-6">
             <h1 class="capitalize mb-2">SETTINGS</h1>
-            <ul class="space-y-1">
+            <ul class="space-y-2">
                 <li>
                     <a
                         href="/"
-                        class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                        class="flex items-center py-2 px-3  text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                     >
                         <i class="bx bx-key mr-2" />
                         <span class="ml-1">Project Key</span>
@@ -57,7 +57,7 @@
                 <li>
                     <a
                         href="/"
-                        class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                        class="flex items-center py-2 px-3  text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                     >
                         <i class="bx bxs-user-account mr-2" />
                         <span class="ml-1">Account</span>

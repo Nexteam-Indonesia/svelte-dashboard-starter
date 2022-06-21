@@ -11,11 +11,11 @@ html {
 }
 
 .btn-primary {
-    @apply bg-indigo-600 text-white border-transparent hover:opacity-75;
+    @apply bg-blue-600 text-white border-transparent hover:opacity-75;
 }
 
 .btn-success {
-    @apply bg-green-500 text-white border-transparent hover:opacity-75;
+    @apply  text-white border-transparent bg-green-500;
 }
 
 .btn-danger {

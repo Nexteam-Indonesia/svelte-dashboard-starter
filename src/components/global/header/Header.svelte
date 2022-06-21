@@ -2,7 +2,7 @@
 </script>
 
 <header
-    class="w-full top-0 flex flex-row flex-wrap items-center justify-between bg-white py-4 px-6 border-b border-gray-200"
+    class="sticky w-full top-0 z-20 flex flex-row flex-wrap items-center justify-between bg-white p-6 border-b border-gray-300"
 >
     <div class="flex-none w-56 flex flex-row items-center">
         <h1 class="font-semibold text-xl">NTI Project</h1>
