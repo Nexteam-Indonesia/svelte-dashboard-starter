@@ -14,7 +14,7 @@
         dispatch("click");
     };
 
-    let btnClass = classnames("btn", `btn-${skin}`, {
+    let btnClass = classnames(`text-center capitalize block py-2 px-5 rounded transition-all ease-in-out duration-300 border text-white border-transparent bg-${skin}-600`, {
         "w-full": wide,
         disabled: disable,
     });
@@ -22,7 +22,7 @@
 
 <button
     type={isSubmit ? "submit" : "button"}
-    class={`text-center capitalize block py-2 px-5 rounded transition-all ease-in-out duration-300 border text-white border-transparent bg-${skin}-600`}
+    class={btnClass}
     on:click={onButtonClicked}
     disabled={disable}
 >
