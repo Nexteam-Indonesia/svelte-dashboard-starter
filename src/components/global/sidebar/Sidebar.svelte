@@ -1,4 +1,49 @@
 <script>
+    import { beforeUpdate, onMount } from "svelte";
+
+    export let currentRoute = "/";
+
+    let menus = [
+        {
+            menu: "Home",
+            child: [
+                {
+                    name: "Home",
+                    route: "/",
+                    icon: "bx bx-home-alt",
+                },
+                {
+                    name: "Project",
+                    route: "/project",
+                    icon: "bx bxs-box",
+                },
+            ],
+        },
+        {
+            menu: "Setting",
+            child: [
+                {
+                    name: "Key",
+                    route: "/key",
+                    icon: "bx bx-key",
+                },
+            ],
+        },
+    ];
+
+    let activeItemclass =
+        "flex items-center py-2 px-3 text-base font-normal text-white rounded-lg dark:text-white bg-blue-500 hover:bg-blue-600";
+
+    let inActiveItemClass =
+        "flex items-center py-2 px-3  text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100";
+
+    beforeUpdate(() => {
+        console.log("BEFORE UPDATE");
+    });
+
+    onMount(() => {
+        console.log("ON MOUNT");
+    });
 </script>
 
 <aside
@@ -10,60 +55,25 @@
                 <i class="bx bxs-x-circle" />
             </button>
         </div>
-        <div class="flex flex-col mb-6">
-            <h1 class="capitalize mb-2">HOME</h1>
-            <ul class="space-y-2">
-                <li>
-                    <a
-                        href="/"
-                        class="flex items-center py-2 px-3 text-base font-normal text-white rounded-lg dark:text-white bg-blue-500 dark:hover:bg-gray-700"
-                    >
-                        <i class="bx bx-home-alt mr-2" />
-                        <span class="ml-1">Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="/"
-                        class="flex items-center py-2 px-3  text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                        <i class="bx bx-cart-alt mr-2" />
-                        <span class="ml-1">Order</span>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="/"
-                        class="flex items-center py-2 px-3  text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                        <i class="bx bx-wallet-alt mr-2" />
-                        <span class="ml-1">Payment</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="flex flex-col mb-6">
-            <h1 class="capitalize mb-2">SETTINGS</h1>
-            <ul class="space-y-2">
-                <li>
-                    <a
-                        href="/"
-                        class="flex items-center py-2 px-3  text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                        <i class="bx bx-key mr-2" />
-                        <span class="ml-1">Project Key</span>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="/"
-                        class="flex items-center py-2 px-3  text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                        <i class="bx bxs-user-account mr-2" />
-                        <span class="ml-1">Account</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        {#each menus as menu}
+            <div class="flex flex-col mb-6">
+                <h1 class="capitalize mb-2">{menu.menu}</h1>
+                <ul class="space-y-2">
+                    {#each menu.child as child}
+                        <li>
+                            <a
+                                href={child.route}
+                                class={currentRoute == child.route
+                                    ? activeItemclass
+                                    : inActiveItemClass}
+                            >
+                                <i class={`${child.icon} mr-2`} />
+                                <span class="ml-1">{child.name}</span>
+                            </a>
+                        </li>
+                    {/each}
+                </ul>
+            </div>
+        {/each}
     </div>
 </aside>
