@@ -1,26 +1,33 @@
 <script>
     import InputText from "../components/global/input/InputText.svelte";
     import PrimaryButton from "../components/global/button/PrimaryButton.svelte";
-    import loginSuite from "../validation/auth/login_validation";
+    import signupSuite from "../validation/auth/signup_validation";
 
     let payload = {};
 
-    let validationResult = loginSuite.get();
+    let validationResult = signupSuite.get();
 
     function handleClick() {
-        console.log(validationResult.isValid());
-        console.log(isFormValid);
+        console.log(validationResult.getErrors("project_name"));
     }
 
     const doValidation = (input) => {
-        validationResult = loginSuite(payload, input.detail);
+        validationResult = signupSuite(payload, input.detail);
+
+        if (input.detail == "project_name") {
+            
+        }
+
+        validationResult.done((result) => {
+            console.log(result);
+        });
+
     };
 
-    $: isFormValid = validationResult.isValid();
 </script>
 
 <div class="bg-gray-50 h-screen w-full md:py-8 lg:py-16">
-    <div class="h-full max-w-md mx-auto flex flex-col justify-center">
+    <div class="h-full max-w-md mx-auto flex flex-col justify-center overflow-auto">
         <div class="bg-white shadow sm:rounded-md sm:overflow-hidden">
             <div class="px-4 py-5 space-y-6 sm:p-6">
                 <form action="">
@@ -45,6 +52,17 @@
                         </div>
                         <div class="col-span-12">
                             <InputText
+                                name="project_name"
+                                label="Project Name"
+                                placeholder="sukses-123"
+                                type="text"
+                                bind:value={payload.project_name}
+                                on:input={doValidation}
+                                error={validationResult.getErrors("project_name")}
+                            />
+                        </div>
+                        <div class="col-span-12">
+                            <InputText
                                 name="password"
                                 label="Password"
                                 placeholder="rahasia123"
@@ -55,11 +73,7 @@
                             />
                         </div>
                         <div class="col-span-12">
-                            <PrimaryButton
-                                on:click={handleClick}
-                                wide={true}
-                                disable={!isFormValid}
-                            >
+                            <PrimaryButton on:click={handleClick} wide={true} disable={false}>
                                 Login
                             </PrimaryButton>
                         </div>
