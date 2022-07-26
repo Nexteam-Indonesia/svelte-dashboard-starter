@@ -1,5 +1,21 @@
 <script>
     let numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+    let schemas = {
+        id: "ID",
+        name: "Name",
+        email: {
+            label: "Customer Email",
+            format: (value) =>
+                `<td class="px-6 py-4 text-blue-500"><a href=mailto:${value["email"]}>${value["email"]}</a></td>`,
+        },
+    };
+
+    let payload = {
+        "name" : "Muhammad Ilzam Mulkhaq",
+        "age" : "25"
+    }
+
 </script>
 
 <table class="table-fixed w-full">

@@ -5,8 +5,6 @@
     import TableBase from "../components/global/table/TableBase.svelte";
     import PaginationBase from "../components/global/pagination/PaginationBase.svelte";
 
-    let payload = {};
-
     let schemas = {
         id: "ID",
         name: "Name",
