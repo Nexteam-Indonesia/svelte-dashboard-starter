@@ -58,6 +58,7 @@
                             <PrimaryButton
                                 on:click={handleClick}
                                 wide={true}
+                                loading={true}
                                 disable={!isFormValid}
                             >
                                 Login
